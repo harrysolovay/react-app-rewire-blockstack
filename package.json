@@ -6,5 +6,8 @@
   "repository": "https://github.com/harrysolovay/react-app-rewire-blockstack.git",
   "author": "Harry Solovay <harrysolovay@gmail.com> (harrysolovay.com)",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "react-app-rewired": "^1.5.2"
+  }
 }
