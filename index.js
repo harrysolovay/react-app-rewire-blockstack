@@ -1,13 +1,9 @@
+const fs = require('fs')
+const path = require('path')
 const { getBabelLoader } = require('react-app-rewired')
-const path = require("path")
 
-module.exports.rewireBlockstackDevServer = (config) => {
-  config.headers = {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE",
-    "Access-Control-Allow-Headers": "Content-Type"
-  }
-}
+const rootDir = fs.realpathSync(process.cwd());
+const resolveNodeModule = modulePath => path.resolve(`${ rootDir }/node_modules`, modulePath)
 
 module.exports.rewireBlockstackBuild = (config) => {
 
@@ -20,14 +16,13 @@ module.exports.rewireBlockstackBuild = (config) => {
   })(babelLoader.include)
 
   const includes = [
-    '../node_modules/bitcoinjs-lib',
-    '../node_modules/tiny-secp256k1/ecurve',
-    '../node_modules/base64url/dist/base64url',
-    '../node_modules/base64url/dist/pad-string',
-    '../node_modules/bip32',
+    'bitcoinjs-lib',
+    'tiny-secp256k1/ecurve',
+    'base64url/dist/base64url',
+    'base64url/dist/pad-string',
+    'bip32',
   ]
-    .map(modulePath => path.resolve(__dirname, modulePath))
-    
+    .map(resolveNodeModule)
     .reduce((accumulator, include) => {
       if (Array.isArray(include)) {
         return accumulator.concat(include)
@@ -40,4 +35,13 @@ module.exports.rewireBlockstackBuild = (config) => {
 
   return config
 
+}
+
+module.exports.rewireBlockstackDevServer = (config) => {
+  config.headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+    'Access-Control-Allow-Headers': 'Content-Type'
+  }
+  return config
 }
