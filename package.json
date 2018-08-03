@@ -1,6 +1,6 @@
 {
   "name": "react-app-rewire-blockstack",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Enables use of BlockstackJS with create-react-app + react-app-rewired projects",
   "main": "index.js",
   "repository": "https://github.com/harrysolovay/react-app-rewire-blockstack.git",
