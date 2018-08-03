@@ -8,13 +8,11 @@ react-app-rewire-blockstack [![npm version](https://img.shields.io/npm/v/react-a
 
 ## Installation
 
-Whether you already have react-app-rewired installed doesn't matter. It's a peer dependency and will be installed if not already present in node_modules.
-
 ```sh
 # with yarn:
-$ yarn add -D react-app-rewire-blockstack
+$ yarn add -D react-app-rewire-blockstack react-app-rewired
 # with npm
-$ npm install -D react-app-rewire-blockstack
+$ npm install -D react-app-rewire-blockstack react-app-rewired
 ```
 
 ## Usage
