@@ -40,8 +40,8 @@ module.exports.rewireBlockstackBuild = (config) => {
 module.exports.rewireBlockstackDevServer = (config) => {
   config.headers = {
     'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
-    'Access-Control-Allow-Headers': 'Content-Type'
+    'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, PATCH, OPTIONS',
+    'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type, Authorization'
   }
   return config
 }
