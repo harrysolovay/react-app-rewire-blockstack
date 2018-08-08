@@ -9,7 +9,7 @@ react-app-rewire-blockstack [![npm version](https://img.shields.io/npm/v/react-a
 ## Installation
 
 ```sh
-# with yarn:
+# with yarn
 $ yarn add -D react-app-rewire-blockstack react-app-rewired
 # with npm
 $ npm install -D react-app-rewire-blockstack react-app-rewired
